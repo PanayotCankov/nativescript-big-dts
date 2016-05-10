@@ -8,6 +8,10 @@
         "noImplicitAny": false,
         "noImplicitUseStrict": true,
         "experimentalDecorators": true,
-        "diagnostics": true
-    }
+        "diagnostics": true,
+        "noLib": true
+    },
+    "files": [
+        "index.ts"
+    ]
 }
