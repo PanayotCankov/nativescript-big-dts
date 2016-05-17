@@ -262,7 +262,7 @@ declare class NSEntityDescription extends NSObject implements NSCoding, NSCopyin
 	/* readonly */ versionHash: NSData;
 
 	versionHashModifier: string;
-	[Symbol.iterator](): Iterator<any>;
+	//[Symbol.iterator](): Iterator<any>;
 
 	constructor(); // inherited from NSObject
 
@@ -828,7 +828,7 @@ declare class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyi
 	localizationDictionary: NSDictionary<string, string>;
 
 	versionIdentifiers: NSSet<any>;
-	[Symbol.iterator](): Iterator<any>;
+	//[Symbol.iterator](): Iterator<any>;
 
 	constructor(); // inherited from NSObject
 

@@ -1,4 +1,5 @@
 /// <reference path="objc!Metal.d.ts" />
+/// <reference path="objc!OpenGLES.d.ts" />
 
 declare class CIColor extends NSObject implements NSCopying, NSSecureCoding {
 

@@ -412,7 +412,7 @@ declare class CMSensorDataList extends NSObject implements NSFastEnumeration {
 	static alloc(): CMSensorDataList; // inherited from NSObject
 
 	static new(): CMSensorDataList; // inherited from NSObject
-	[Symbol.iterator](): Iterator<any>;
+	//[Symbol.iterator](): Iterator<any>;
 
 	constructor(); // inherited from NSObject
 

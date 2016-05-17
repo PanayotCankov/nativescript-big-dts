@@ -670,7 +670,7 @@ declare class PHFetchResult<ObjectType> extends NSObject implements NSCopying, N
 
 	/* readonly */ lastObject: ObjectType;
 	[index: number]: ObjectType;
-	[Symbol.iterator](): Iterator<any>;
+	//[Symbol.iterator](): Iterator<any>;
 
 	constructor(); // inherited from NSObject
 

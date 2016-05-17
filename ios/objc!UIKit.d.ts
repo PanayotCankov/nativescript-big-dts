@@ -2,7 +2,10 @@
 /// <reference path="./objc!ObjectiveC.d.ts" />
 /// <reference path="./objc!Foundation.d.ts" />
 /// <reference path="./objc!CoreGraphics.d.ts" />
+/// <reference path="./objc!CoreImage.d.ts" />
 /// <reference path="./objc!CoreText.d.ts" />
+/// <reference path="./objc!QuartzCore.d.ts" />
+/// <reference path="./objc!CoreLocation.d.ts" />
 
 declare function CGAffineTransformFromString(string: string): CGAffineTransform;
 
@@ -2018,7 +2021,7 @@ declare class UIApplicationShortcutIcon extends NSObject implements NSCopying {
 
 	static alloc(): UIApplicationShortcutIcon; // inherited from NSObject
 
-	static iconWithContact(contact: CNContact): UIApplicationShortcutIcon;
+	// (Category?) static iconWithContact(contact: CNContact): UIApplicationShortcutIcon;
 
 	static iconWithTemplateImageName(templateImageName: string): UIApplicationShortcutIcon;
 
@@ -5873,9 +5876,9 @@ declare class UIManagedDocument extends UIDocument {
 
 	static persistentStoreName(): string;
 
-	/* readonly */ managedObjectContext: NSManagedObjectContext;
+	///* readonly */ managedObjectContext: NSManagedObjectContext;
 
-	/* readonly */ managedObjectModel: NSManagedObjectModel;
+	///* readonly */ managedObjectModel: NSManagedObjectModel;
 
 	modelConfiguration: string;
 
@@ -10641,7 +10644,7 @@ declare class UITouch extends NSObject {
 
 	azimuthUnitVectorInView(view: UIView): CGVector;
 
-	locationInNode(node: SKNode): CGPoint;
+	//locationInNode(node: SKNode): CGPoint;
 
 	locationInView(view: UIView): CGPoint;
 
@@ -10649,7 +10652,7 @@ declare class UITouch extends NSObject {
 
 	precisePreviousLocationInView(view: UIView): CGPoint;
 
-	previousLocationInNode(node: SKNode): CGPoint;
+	//previousLocationInNode(node: SKNode): CGPoint;
 
 	previousLocationInView(view: UIView): CGPoint;
 
@@ -11470,7 +11473,7 @@ declare class UIViewController extends UIResponder implements NSCoding, NSExtens
 
 	/* readonly */ interfaceOrientation: UIInterfaceOrientation;
 
-	interstitialPresentationPolicy: ADInterstitialPresentationPolicy;
+	// (iAd) interstitialPresentationPolicy: ADInterstitialPresentationPolicy;
 
 	modalInPopover: boolean;
 
@@ -11662,7 +11665,7 @@ declare class UIViewController extends UIResponder implements NSCoding, NSExtens
 
 	presentModalViewControllerAnimated(modalViewController: UIViewController, animated: boolean): void;
 
-	presentMoviePlayerViewControllerAnimated(moviePlayerViewController: MPMoviePlayerViewController): void;
+	// (MPMoviePlayerViewController) presentMoviePlayerViewControllerAnimated(moviePlayerViewController: MPMoviePlayerViewController): void;
 
 	presentViewControllerAnimatedCompletion(viewControllerToPresent: UIViewController, flag: boolean, completion: () => void): void;
 

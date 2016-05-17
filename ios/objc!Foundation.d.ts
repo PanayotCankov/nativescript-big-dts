@@ -1,13 +1,4 @@
-/// <reference path="./objc!CloudKit.d.ts" />
-/// <reference path="./objc!CoreMedia.d.ts" />
-/// <reference path="./objc!QuartzCore.d.ts" />
-/// <reference path="./objc!NetworkExtension.d.ts" />
-/// <reference path="./objc!QuickLook.d.ts" />
-/// <reference path="./objc!NewsstandKit.d.ts" />
-/// <reference path="./objc!Security.d.ts" />
-/// <reference path="./objc!SceneKit.d.ts" />
-/// <reference path="./objc!CoreSpotlight.d.ts" />
-/// <reference path="./objc!MapKit.d.ts" />
+
 
 declare const enum NSActivityOptions {
 
@@ -34,7 +25,7 @@ declare function NSAllocateObject(aClass: typeof NSObject, extraBytes: number, z
 
 declare var NSArgumentDomain: string;
 
-declare class NSArray<ObjectType> extends NSObject implements CKRecordValue, NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding {
+declare class NSArray<ObjectType> extends NSObject implements /* CKRecordValue, */ NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding {
 
 	static alloc<ObjectType>(): NSArray<ObjectType>; // inherited from NSObject
 
@@ -1020,12 +1011,13 @@ declare class NSCoder extends NSObject {
 
 	decodeCGVectorForKey(key: string): CGVector;
 
+/* AVFoundation (AVTimeCoding)
 	decodeCMTimeForKey(key: string): CMTime;
 
 	decodeCMTimeMappingForKey(key: string): CMTimeMapping;
 
 	decodeCMTimeRangeForKey(key: string): CMTimeRange;
-
+*/
 	decodeDataObject(): NSData;
 
 	decodeDoubleForKey(key: string): number;
@@ -1085,13 +1077,13 @@ declare class NSCoder extends NSObject {
 	encodeCGSizeForKey(size: CGSize, key: string): void;
 
 	encodeCGVectorForKey(vector: CGVector, key: string): void;
-
+/*
 	encodeCMTimeForKey(time: CMTime, key: string): void;
 
 	encodeCMTimeMappingForKey(timeMapping: CMTimeMapping, key: string): void;
 
 	encodeCMTimeRangeForKey(timeRange: CMTimeRange, key: string): void;
-
+*/
 	encodeConditionalObject(object: any): void;
 
 	encodeConditionalObjectForKey(objv: any, key: string): void;
@@ -1315,7 +1307,7 @@ declare function NSCreateZone(startSize: number, granularity: number, canFree: b
 
 declare var NSCurrentLocaleDidChangeNotification: string;
 
-declare class NSData extends NSObject implements CKRecordValue, NSCopying, NSMutableCopying, NSSecureCoding {
+declare class NSData extends NSObject implements /* CKRecordValue, */NSCopying, NSMutableCopying, NSSecureCoding {
 
 	static alloc(): NSData; // inherited from NSObject
 
@@ -1484,7 +1476,7 @@ declare const enum NSDataWritingOptions {
 	AtomicWrite = 1
 }
 
-declare class NSDate extends NSObject implements CKRecordValue, NSCopying, NSSecureCoding {
+declare class NSDate extends NSObject implements /* CKRecordValue, */ NSCopying, NSSecureCoding {
 
 	static alloc(): NSDate; // inherited from NSObject
 
@@ -5240,7 +5232,7 @@ declare class NSMutableURLRequest extends NSURLRequest {
 
 	addValueForHTTPHeaderField(value: string, field: string): void;
 
-	bindToHotspotHelperCommand(command: NEHotspotHelperCommand): void;
+	// bindToHotspotHelperCommand(command: NEHotspotHelperCommand): void;
 
 	setValueForHTTPHeaderField(value: string, field: string): void;
 }
@@ -5497,7 +5489,7 @@ declare class NSNotificationQueue extends NSObject {
 	self(): NSNotificationQueue; // inherited from NSObjectProtocol
 }
 
-declare class NSNull extends NSObject implements CAAction, NSCopying, NSSecureCoding {
+declare class NSNull extends NSObject implements /* CAAction, */ NSCopying, NSSecureCoding {
 
 	static alloc(): NSNull; // inherited from NSObject
 
@@ -5520,7 +5512,7 @@ declare class NSNull extends NSObject implements CAAction, NSCopying, NSSecureCo
 	self(): NSNull; // inherited from NSObjectProtocol
 }
 
-declare class NSNumber extends NSValue implements CKRecordValue {
+declare class NSNumber extends NSValue /* implements CKRecordValue */ {
 
 	static numberWithBool(value: boolean): number;
 
@@ -7439,7 +7431,7 @@ declare const enum NSStreamStatus {
 	Error = 7
 }
 
-declare class NSString extends NSObject implements CKRecordValue, CNKeyDescriptor, NSCopying, NSMutableCopying, NSSecureCoding {
+declare class NSString extends NSObject implements /* CKRecordValue, CNKeyDescriptor, */ NSCopying, NSMutableCopying, NSSecureCoding {
 
 	static alloc(): NSString; // inherited from NSObject
 
@@ -8235,7 +8227,7 @@ declare class NSTimer extends NSObject {
 	self(): NSTimer; // inherited from NSObjectProtocol
 }
 
-declare class NSURL extends NSObject implements NSCopying, NSSecureCoding, QLPreviewItem {
+declare class NSURL extends NSObject implements NSCopying, NSSecureCoding /*, QLPreviewItem */ {
 
 	static URLByResolvingAliasFileAtURLOptionsError(url: NSURL, options: NSURLBookmarkResolutionOptions): NSURL;
 
@@ -8637,7 +8629,7 @@ declare class NSURLConnection extends NSObject {
 
 	/* readonly */ currentRequest: NSURLRequest;
 
-	/* readonly */ newsstandAssetDownload: NKAssetDownload;
+	// /* readonly */ newsstandAssetDownload: NKAssetDownload;
 
 	/* readonly */ originalRequest: NSURLRequest;
 
@@ -9312,11 +9304,11 @@ declare class NSURLSessionConfiguration extends NSObject implements NSCopying {
 	HTTPShouldSetCookies: boolean;
 
 	HTTPShouldUsePipelining: boolean;
-
+/*
 	TLSMaximumSupportedProtocol: SSLProtocol;
 
 	TLSMinimumSupportedProtocol: SSLProtocol;
-
+*/
 	URLCache: NSURLCache;
 
 	URLCredentialStorage: NSURLCredentialStorage;
@@ -9837,7 +9829,7 @@ declare class NSUserActivity extends NSObject {
 
 	/* readonly */ activityType: string;
 
-	contentAttributeSet: CSSearchableItemAttributeSet;
+	// contentAttributeSet: CSSearchableItemAttributeSet;
 
 	delegate: NSUserActivityDelegate;
 
@@ -9994,7 +9986,7 @@ declare class NSValue extends NSObject implements NSCopying, NSSecureCoding {
 
 	static valueWithBytesObjCType(value: interop.Pointer, type: string): NSValue;
 
-	static valueWithCATransform3D(t: CATransform3D): NSValue;
+	// static valueWithCATransform3D(t: CATransform3D): NSValue;
 
 	static valueWithCGAffineTransform(transform: CGAffineTransform): NSValue;
 
@@ -10006,8 +9998,8 @@ declare class NSValue extends NSObject implements NSCopying, NSSecureCoding {
 
 	static valueWithCGVector(vector: CGVector): NSValue;
 
-	static valueWithCMTime(time: CMTime): NSValue;
-
+	// static valueWithCMTime(time: CMTime): NSValue;
+/*
 	static valueWithCMTimeMapping(timeMapping: CMTimeMapping): NSValue;
 
 	static valueWithCMTimeRange(timeRange: CMTimeRange): NSValue;
@@ -10015,7 +10007,7 @@ declare class NSValue extends NSObject implements NSCopying, NSSecureCoding {
 	static valueWithMKCoordinate(coordinate: CLLocationCoordinate2D): NSValue;
 
 	static valueWithMKCoordinateSpan(span: MKCoordinateSpan): NSValue;
-
+*/
 	static valueWithNonretainedObject(anObject: any): NSValue;
 
 	static valueWithObjCType(value: interop.Pointer, type: string): NSValue;
@@ -10023,34 +10015,34 @@ declare class NSValue extends NSObject implements NSCopying, NSSecureCoding {
 	static valueWithPointer(pointer: interop.Pointer): NSValue;
 
 	static valueWithRange(range: NSRange): NSValue;
-
+/*
 	static valueWithSCNMatrix4(v: SCNMatrix4): NSValue;
 
 	static valueWithSCNVector3(v: SCNVector3): NSValue;
 
 	static valueWithSCNVector4(v: SCNVector4): NSValue;
-
+*/
 	static valueWithUIEdgeInsets(insets: UIEdgeInsets): NSValue;
 
 	static valueWithUIOffset(insets: UIOffset): NSValue;
 
-	/* readonly */ CATransform3DValue: CATransform3D;
+	// /* readonly */ CATransform3DValue: CATransform3D;
 
-	/* readonly */ CMTimeMappingValue: CMTimeMapping;
+	// /* readonly */ CMTimeMappingValue: CMTimeMapping;
 
-	/* readonly */ CMTimeRangeValue: CMTimeRange;
+	// /* readonly */ CMTimeRangeValue: CMTimeRange;
 
-	/* readonly */ CMTimeValue: CMTime;
+	// /* readonly */ CMTimeValue: CMTime;
 
-	/* readonly */ MKCoordinateSpanValue: MKCoordinateSpan;
+	// /* readonly */ MKCoordinateSpanValue: MKCoordinateSpan;
 
-	/* readonly */ MKCoordinateValue: CLLocationCoordinate2D;
+	// /* readonly */ MKCoordinateValue: CLLocationCoordinate2D;
 
-	/* readonly */ SCNMatrix4Value: SCNMatrix4;
+	// /* readonly */ SCNMatrix4Value: SCNMatrix4;
 
-	/* readonly */ SCNVector3Value: SCNVector3;
+	// /* readonly */ SCNVector3Value: SCNVector3;
 
-	/* readonly */ SCNVector4Value: SCNVector4;
+	// /* readonly */ SCNVector4Value: SCNVector4;
 
 	/* readonly */ nonretainedObjectValue: any;
 

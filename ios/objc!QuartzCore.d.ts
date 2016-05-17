@@ -18,7 +18,7 @@ declare class CAAnimation extends NSObject implements CAAction, CAMediaTiming, N
 
 	static new(): CAAnimation; // inherited from NSObject
 
-	animationEvents: NSArray<SCNAnimationEvent>;
+	// (SceneKit?) animationEvents: NSArray<SCNAnimationEvent>;
 
 	delegate: any;
 

@@ -1,5 +1,3 @@
-/// <reference path="./ios/objc!UIKit.d.ts" />
-
 declare var isAndroid: boolean;
 declare var isIOS: boolean;
 

@@ -221,7 +221,7 @@ declare class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
 	self(): CLHeading; // inherited from NSObjectProtocol
 }
 
-declare class CLLocation extends NSObject implements CKRecordValue, NSCopying, NSSecureCoding {
+declare class CLLocation extends NSObject implements /* CKRecordValue, */ NSCopying, NSSecureCoding {
 
 	static alloc(): CLLocation; // inherited from NSObject
 

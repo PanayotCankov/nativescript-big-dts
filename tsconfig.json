@@ -9,9 +9,12 @@
         "noImplicitUseStrict": true,
         "experimentalDecorators": true,
         "diagnostics": true,
-        "noLib": true
+        "noLib": false
     },
     "files": [
-        "index.ts"
+        "index.ts",
+        "lib.core.d.ts",
+        
+        "ios/objc!UIKit.d.ts"
     ]
 }
