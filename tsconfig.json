@@ -10,11 +10,5 @@
         "experimentalDecorators": true,
         "diagnostics": true,
         "noLib": false
-    },
-    "files": [
-        "index.ts",
-        "lib.core.d.ts",
-        
-        "ios/objc!UIKit.d.ts"
-    ]
+    }
 }
